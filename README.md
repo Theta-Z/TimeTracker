@@ -11,5 +11,5 @@ Explination of how to use
 
 What are we using?
 -----------------
-> Newtonsoft.Json
+> Newtonsoft.Json  
 > Gma.UserActivityMonitor [this will be used later for a feature to help define when a user goes AFK].
