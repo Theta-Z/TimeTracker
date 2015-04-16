@@ -1,6 +1,6 @@
-﻿namespace Time_Tracker
+﻿namespace Time_Tracker.Forms
 {
-  partial class Form1
+  partial class TimeTrackerForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,20 +28,19 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeTrackerForm));
             this.btnClose = new System.Windows.Forms.Button();
             this._MNAREA = new System.Windows.Forms.Panel();
             this.gbActions = new System.Windows.Forms.GroupBox();
-            this.btnFinishDay = new System.Windows.Forms.Button();
-            this.btnNewDay = new System.Windows.Forms.Button();
+            this.btnExportDay = new System.Windows.Forms.Button();
+            this.btnClearTaskLog = new System.Windows.Forms.Button();
             this.gbTasks = new System.Windows.Forms.GroupBox();
+            this.txtTasks = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.notifier = new System.Windows.Forms.NotifyIcon(this.components);
-            this.tmrTimeout = new System.Windows.Forms.Timer(this.components);
-            this.tmrMinute = new System.Windows.Forms.Timer(this.components);
+            this.lblMinimize = new System.Windows.Forms.Label();
             this._MNAREA.SuspendLayout();
             this.gbActions.SuspendLayout();
+            this.gbTasks.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -68,74 +67,84 @@
             // 
             // gbActions
             // 
-            this.gbActions.Controls.Add(this.btnFinishDay);
-            this.gbActions.Controls.Add(this.btnNewDay);
-            this.gbActions.Location = new System.Drawing.Point(426, 3);
+            this.gbActions.Controls.Add(this.btnExportDay);
+            this.gbActions.Controls.Add(this.btnClearTaskLog);
+            this.gbActions.Location = new System.Drawing.Point(489, 3);
             this.gbActions.Name = "gbActions";
-            this.gbActions.Size = new System.Drawing.Size(185, 256);
+            this.gbActions.Size = new System.Drawing.Size(122, 256);
             this.gbActions.TabIndex = 1;
             this.gbActions.TabStop = false;
             this.gbActions.Text = "Actions";
             // 
-            // btnFinishDay
+            // btnExportDay
             // 
-            this.btnFinishDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFinishDay.Location = new System.Drawing.Point(6, 48);
-            this.btnFinishDay.Name = "btnFinishDay";
-            this.btnFinishDay.Size = new System.Drawing.Size(84, 23);
-            this.btnFinishDay.TabIndex = 1;
-            this.btnFinishDay.Text = "Finish Day";
-            this.btnFinishDay.UseVisualStyleBackColor = true;
-            this.btnFinishDay.Click += new System.EventHandler(this.btnFinishDay_Click);
+            this.btnExportDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExportDay.Location = new System.Drawing.Point(6, 19);
+            this.btnExportDay.Name = "btnExportDay";
+            this.btnExportDay.Size = new System.Drawing.Size(110, 23);
+            this.btnExportDay.TabIndex = 2;
+            this.btnExportDay.Text = "Export Task Log";
+            this.btnExportDay.UseVisualStyleBackColor = true;
+            this.btnExportDay.Click += new System.EventHandler(this.btnExportDay_Click);
             // 
-            // btnNewDay
+            // btnClearTaskLog
             // 
-            this.btnNewDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNewDay.Location = new System.Drawing.Point(6, 19);
-            this.btnNewDay.Name = "btnNewDay";
-            this.btnNewDay.Size = new System.Drawing.Size(84, 23);
-            this.btnNewDay.TabIndex = 0;
-            this.btnNewDay.Text = "New Day";
-            this.btnNewDay.UseVisualStyleBackColor = true;
-            this.btnNewDay.Click += new System.EventHandler(this.btnNewDay_Click);
+            this.btnClearTaskLog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClearTaskLog.Location = new System.Drawing.Point(6, 227);
+            this.btnClearTaskLog.Name = "btnClearTaskLog";
+            this.btnClearTaskLog.Size = new System.Drawing.Size(110, 23);
+            this.btnClearTaskLog.TabIndex = 1;
+            this.btnClearTaskLog.Text = "Clear Task Log";
+            this.btnClearTaskLog.UseVisualStyleBackColor = true;
+            this.btnClearTaskLog.Click += new System.EventHandler(this.btnClearTaskLog_Click);
             // 
             // gbTasks
             // 
+            this.gbTasks.Controls.Add(this.txtTasks);
             this.gbTasks.Location = new System.Drawing.Point(10, 3);
             this.gbTasks.Name = "gbTasks";
-            this.gbTasks.Size = new System.Drawing.Size(410, 256);
+            this.gbTasks.Size = new System.Drawing.Size(473, 256);
             this.gbTasks.TabIndex = 0;
             this.gbTasks.TabStop = false;
             this.gbTasks.Text = "Tasks";
+            // 
+            // txtTasks
+            // 
+            this.txtTasks.Location = new System.Drawing.Point(6, 14);
+            this.txtTasks.MaxLength = 9999999;
+            this.txtTasks.Multiline = true;
+            this.txtTasks.Name = "txtTasks";
+            this.txtTasks.ReadOnly = true;
+            this.txtTasks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtTasks.Size = new System.Drawing.Size(461, 238);
+            this.txtTasks.TabIndex = 0;
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Andy", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.PeachPuff;
             this.lbTitle.Location = new System.Drawing.Point(12, 9);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(45, 24);
+            this.lbTitle.Size = new System.Drawing.Size(130, 27);
             this.lbTitle.TabIndex = 2;
-            this.lbTitle.Text = "Title";
+            this.lbTitle.Text = "Time Tracker";
             // 
-            // notifier
+            // lblMinimize
             // 
-            this.notifier.Text = "Task Timer Notification Agent";
-            this.notifier.Visible = true;
+            this.lblMinimize.AutoSize = true;
+            this.lblMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.lblMinimize.Font = new System.Drawing.Font("Jing Jing", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinimize.ForeColor = System.Drawing.Color.PeachPuff;
+            this.lblMinimize.Location = new System.Drawing.Point(565, 9);
+            this.lblMinimize.Name = "lblMinimize";
+            this.lblMinimize.Size = new System.Drawing.Size(23, 25);
+            this.lblMinimize.TabIndex = 3;
+            this.lblMinimize.Text = "_";
+            this.lblMinimize.Click += new System.EventHandler(this.lblMinimize_Click);
             // 
-            // tmrTimeout
-            // 
-            this.tmrTimeout.Interval = 60000;
-            this.tmrTimeout.Tick += new System.EventHandler(this.tmrTimeout_Tick);
-            // 
-            // tmrMinute
-            // 
-            this.tmrMinute.Interval = 60000;
-            this.tmrMinute.Tick += new System.EventHandler(this.tmrMinute_Tick);
-            // 
-            // Form1
+            // TimeTrackerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,17 +152,20 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(629, 311);
+            this.Controls.Add(this.lblMinimize);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this._MNAREA);
             this.Controls.Add(this.btnClose);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "TimeTrackerForm";
             this.Text = "Time Tracker";
-            this.TransparencyKey = System.Drawing.Color.White;
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this._MNAREA.ResumeLayout(false);
             this.gbActions.ResumeLayout(false);
+            this.gbTasks.ResumeLayout(false);
+            this.gbTasks.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,13 +176,12 @@
     private System.Windows.Forms.Button btnClose;
     private System.Windows.Forms.Panel _MNAREA;
     private System.Windows.Forms.Label lbTitle;
-    private System.Windows.Forms.NotifyIcon notifier;
     private System.Windows.Forms.GroupBox gbActions;
-    private System.Windows.Forms.Button btnNewDay;
     private System.Windows.Forms.GroupBox gbTasks;
-    private System.Windows.Forms.Timer tmrTimeout;
-    private System.Windows.Forms.Timer tmrMinute;
-    private System.Windows.Forms.Button btnFinishDay;
+    private System.Windows.Forms.Button btnClearTaskLog;
+    private System.Windows.Forms.Button btnExportDay;
+    private System.Windows.Forms.TextBox txtTasks;
+    private System.Windows.Forms.Label lblMinimize;
   }
 }
 
