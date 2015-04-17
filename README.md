@@ -2,7 +2,9 @@
 
 Don't want the code?  
 ---------------------
-> * No problem! [Download me!](https://github.com/Theta-Z/TimeTracker/blob/master/Time%20Tracker%20v1.zip?raw=true)
+> * No problem! 
+> * [v1.0 Download me!](https://github.com/Theta-Z/TimeTracker/blob/master/Time%20Tracker%20v1.zip?raw=true)  
+> * [v1.1 Download me!](https://github.com/Theta-Z/TimeTracker/blob/master/Time%20Tracker%20v1.1.zip?raw=true)  
 
 Explination of how to use  
 ==========================
