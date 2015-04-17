@@ -35,6 +35,15 @@
             this.btnExportDay = new System.Windows.Forms.Button();
             this.btnClearTaskLog = new System.Windows.Forms.Button();
             this.gbTasks = new System.Windows.Forms.GroupBox();
+            this.cbTimeWorkedTask = new System.Windows.Forms.ComboBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSeconds = new System.Windows.Forms.TextBox();
+            this.txtMinutes = new System.Windows.Forms.TextBox();
+            this.txtHours = new System.Windows.Forms.TextBox();
+            this.cbTimeWorkedDate = new System.Windows.Forms.ComboBox();
             this.txtTasks = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
@@ -100,6 +109,15 @@
             // 
             // gbTasks
             // 
+            this.gbTasks.Controls.Add(this.cbTimeWorkedTask);
+            this.gbTasks.Controls.Add(this.textBox4);
+            this.gbTasks.Controls.Add(this.textBox3);
+            this.gbTasks.Controls.Add(this.textBox2);
+            this.gbTasks.Controls.Add(this.textBox1);
+            this.gbTasks.Controls.Add(this.txtSeconds);
+            this.gbTasks.Controls.Add(this.txtMinutes);
+            this.gbTasks.Controls.Add(this.txtHours);
+            this.gbTasks.Controls.Add(this.cbTimeWorkedDate);
             this.gbTasks.Controls.Add(this.txtTasks);
             this.gbTasks.Location = new System.Drawing.Point(10, 3);
             this.gbTasks.Name = "gbTasks";
@@ -107,6 +125,135 @@
             this.gbTasks.TabIndex = 0;
             this.gbTasks.TabStop = false;
             this.gbTasks.Text = "Tasks";
+            // 
+            // cbTimeWorkedTask
+            // 
+            this.cbTimeWorkedTask.FormattingEnabled = true;
+            this.cbTimeWorkedTask.Items.AddRange(new object[] {
+            "Any Task"});
+            this.cbTimeWorkedTask.Location = new System.Drawing.Point(364, 62);
+            this.cbTimeWorkedTask.Name = "cbTimeWorkedTask";
+            this.cbTimeWorkedTask.Size = new System.Drawing.Size(103, 21);
+            this.cbTimeWorkedTask.TabIndex = 15;
+            this.cbTimeWorkedTask.Text = "<Task>";
+            this.cbTimeWorkedTask.SelectedIndexChanged += new System.EventHandler(this.cbTimeWorkedTask_SelectedIndexChanged);
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.PeachPuff;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(364, 213);
+            this.textBox4.MaxLength = 10;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(103, 13);
+            this.textBox4.TabIndex = 14;
+            this.textBox4.Text = "Seconds";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.PeachPuff;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(364, 163);
+            this.textBox3.MaxLength = 10;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(103, 13);
+            this.textBox3.TabIndex = 13;
+            this.textBox3.Text = "Minutes";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.PeachPuff;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(364, 19);
+            this.textBox2.MaxLength = 10;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(103, 13);
+            this.textBox2.TabIndex = 12;
+            this.textBox2.Text = "Time Worked On";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.PeachPuff;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(364, 113);
+            this.textBox1.MaxLength = 10;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(103, 13);
+            this.textBox1.TabIndex = 11;
+            this.textBox1.Text = "Hours";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSeconds
+            // 
+            this.txtSeconds.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSeconds.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSeconds.Location = new System.Drawing.Point(364, 232);
+            this.txtSeconds.MaxLength = 10;
+            this.txtSeconds.Name = "txtSeconds";
+            this.txtSeconds.ReadOnly = true;
+            this.txtSeconds.Size = new System.Drawing.Size(103, 13);
+            this.txtSeconds.TabIndex = 10;
+            this.txtSeconds.Text = "--";
+            this.txtSeconds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtMinutes
+            // 
+            this.txtMinutes.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtMinutes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMinutes.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinutes.Location = new System.Drawing.Point(364, 182);
+            this.txtMinutes.MaxLength = 10;
+            this.txtMinutes.Name = "txtMinutes";
+            this.txtMinutes.ReadOnly = true;
+            this.txtMinutes.Size = new System.Drawing.Size(103, 13);
+            this.txtMinutes.TabIndex = 9;
+            this.txtMinutes.Text = "--";
+            this.txtMinutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtHours
+            // 
+            this.txtHours.BackColor = System.Drawing.Color.PeachPuff;
+            this.txtHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHours.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHours.Location = new System.Drawing.Point(364, 132);
+            this.txtHours.MaxLength = 10;
+            this.txtHours.Name = "txtHours";
+            this.txtHours.ReadOnly = true;
+            this.txtHours.Size = new System.Drawing.Size(103, 13);
+            this.txtHours.TabIndex = 8;
+            this.txtHours.Text = "--";
+            this.txtHours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cbTimeWorkedDate
+            // 
+            this.cbTimeWorkedDate.FormattingEnabled = true;
+            this.cbTimeWorkedDate.Items.AddRange(new object[] {
+            "Any Day"});
+            this.cbTimeWorkedDate.Location = new System.Drawing.Point(364, 35);
+            this.cbTimeWorkedDate.Name = "cbTimeWorkedDate";
+            this.cbTimeWorkedDate.Size = new System.Drawing.Size(103, 21);
+            this.cbTimeWorkedDate.TabIndex = 4;
+            this.cbTimeWorkedDate.Text = "<Day>";
+            this.cbTimeWorkedDate.SelectedIndexChanged += new System.EventHandler(this.cbTimeWorkedDate_SelectedIndexChanged);
             // 
             // txtTasks
             // 
@@ -116,7 +263,7 @@
             this.txtTasks.Name = "txtTasks";
             this.txtTasks.ReadOnly = true;
             this.txtTasks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTasks.Size = new System.Drawing.Size(461, 238);
+            this.txtTasks.Size = new System.Drawing.Size(352, 238);
             this.txtTasks.TabIndex = 0;
             // 
             // lbTitle
@@ -161,7 +308,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TimeTrackerForm";
             this.Text = "Time Tracker";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this._MNAREA.ResumeLayout(false);
             this.gbActions.ResumeLayout(false);
             this.gbTasks.ResumeLayout(false);
@@ -182,6 +329,15 @@
     private System.Windows.Forms.Button btnExportDay;
     private System.Windows.Forms.TextBox txtTasks;
     private System.Windows.Forms.Label lblMinimize;
+    private System.Windows.Forms.ComboBox cbTimeWorkedDate;
+    private System.Windows.Forms.TextBox textBox4;
+    private System.Windows.Forms.TextBox textBox3;
+    private System.Windows.Forms.TextBox textBox2;
+    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox txtSeconds;
+    private System.Windows.Forms.TextBox txtMinutes;
+    private System.Windows.Forms.TextBox txtHours;
+    private System.Windows.Forms.ComboBox cbTimeWorkedTask;
   }
 }
 

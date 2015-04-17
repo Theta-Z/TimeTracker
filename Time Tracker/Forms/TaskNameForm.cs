@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Time_Tracker.Forms
 {
@@ -7,27 +8,26 @@ namespace Time_Tracker.Forms
     {
         public string TaskName { get; set; }
 
-        public TaskNameForm()
+        public TaskNameForm(Dictionary<DateTime, Dictionary<string, int>> tasks)
         {
             InitializeComponent();
+            System.Threading.Thread.SpinWait(50);
+
+            foreach (var entry in tasks)
+            foreach (var task in entry.Value)
+            {
+                if(!cbTaskList.Items.Contains(task.Key))
+                    cbTaskList.Items.Add(task.Key);
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTaskName.Text.Trim()))
+            if (!string.IsNullOrEmpty(cbTaskList.Text.Trim()))
             {
-                err.SetError(txtTaskName, "This shouldn't be empty.");
-                return;
-            }
-
-            TaskName = txtTaskName.Text;
-        }
-
-        private void txtTaskName_TextChanged(object sender, EventArgs e)
-        {
-            if (txtTaskName.Text.Length > 1)
-            {
-                btnSubmit.DialogResult = DialogResult.OK;
+                TaskName = cbTaskList.Text;
+                DialogResult = DialogResult.OK;
+                Close();
             }
         }
     }
