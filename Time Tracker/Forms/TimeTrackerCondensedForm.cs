@@ -132,11 +132,21 @@ namespace Time_Tracker.Forms
             lblPauseUnpause.Text = "▶";
 
             OnTaskStop.Invoke();
+        }
 
+        public void TaskComplete()
+        {
             HOURS = 0;
             MINUTES = 0;
             SECONDS = 0;
             lblCurrentTaskTime.Text = "0:00:00";
+        }
+
+        public void TaskCompleteCancel()
+        {
+            PAUSED = false;
+            SecTimer.StartTimer();
+            lblPauseUnpause.Text = "II";
         }
     }
 }
