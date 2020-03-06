@@ -9,7 +9,7 @@ Don't want the code?
 Explination of how to use  
 ==========================
 > A wise man once said, "A good UI is like a good joke... If you have to epxplain it, it's bad".  
-> Just play around with the UI a little, I promise it won't take long to pick up! :3
+> Just play around with the UI a little, I promise it won't take long to pick up!
 
 What are we using?
 -----------------
